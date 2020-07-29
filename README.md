@@ -140,7 +140,7 @@ ssh -i /path/my-key-pair.pem ubuntu@my-instance-public-dns-name
 ```  
 
 ### Accessing your instance from a windows machine:  
-Use [Putty](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
+Use [Putty](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html).  
 Maybe someone with a PC can write this section.
 
 ## Playing around with your instance:  
