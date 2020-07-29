@@ -15,7 +15,7 @@ UNCW center for bioinformatics
 * [Learn more](https://github.com/ScientistJake/getting_started_with_AWS#learn-more) 
 
 ## Introduction:  
-If you're on this page, you've likely been tasked with getting an analysis pipeline, web server, or ther such utility onto the cloud. With that in mind, I'll dispense with the spiel about why cloud computing is useful and yadda yadda yadda. This guide covers AWS and is intended to make the transition to the cloud as painless as possible even if you know very little linux. If you're a bioinformaticien, you might also check out [jetsream-cloud](https://jetstream-cloud.org/) (stay tuned for a tutorial on that one).
+If you're on this page, you've likely been tasked with getting an analysis pipeline, web server, or other such utility onto the cloud. This guide covers AWS and is intended to make the transition to the cloud as painless as possible even if you know very little linux. If you're a bioinformaticien, you might also check out [jetsream-cloud](https://jetstream-cloud.org/) (stay tuned for a tutorial on that one).
 
 ## Getting started:  
 First things first. If you don't have an Amazon ec2 account now's the time to register. Note that they have a [free tier](https://aws.amazon.com/free/) (which is just barrrrely enough to get a web server running fyi...) and an [Educate](https://aws.amazon.com/education/awseducate/) program.
