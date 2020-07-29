@@ -4,19 +4,16 @@ UNCW center for bioinformatics
 UNCW DataScience
 
 ## Contents: 
-* [Introduction]()  
-* [Getting started]()  
-* [Launching an Instance]() 
-     - [Selecting an image]() 
-     - [Configuring secutiry]() 
-* [Accessing an instance via ssh]() 
-     - [From Mac OSX / Linux]() 
-     - [From Windows]() 
-* [Playing around with your instance]() 
-* [Moving files on and off via scp]() 
-* [Monitoring the instance]() 
-* [Shutting down instances and cleaning up]() 
-* [Learn more]() 
+* [Introduction](https://github.com/ScientistJake/getting_started_with_AWS#introduction)  
+* [Getting started](https://github.com/ScientistJake/getting_started_with_AWS#getting-started)  
+* [Accessing an instance via ssh](https://github.com/ScientistJake/getting_started_with_AWS#accessing-an-instance-via-ssh) 
+     - [From Mac OSX / Linux](https://github.com/ScientistJake/getting_started_with_AWS#accessing-an-instance-via-ssh-from-a-mac-linux) 
+     - [From Windows](https://github.com/ScientistJake/getting_started_with_AWS#accessing-your-instance-from-windows-machine) 
+* [Playing around with your instance](https://github.com/ScientistJake/getting_started_with_AWS#playing-around-with-your-instance) 
+* [Moving files on and off via scp](https://github.com/ScientistJake/getting_started_with_AWS#moving-files-on-and-off-via-scp) 
+* [Monitoring the instance](https://github.com/ScientistJake/getting_started_with_AWS#monitoring-the-instance) 
+* [Shutting down instances and cleaning up](https://github.com/ScientistJake/getting_started_with_AWS#shutting-down-an-instance-and-cleaning-up) 
+* [Learn more](https://github.com/ScientistJake/getting_started_with_AWS#learn-more) 
 
 ## Introduction:  
 If you're on this page, you've likely been tasked with getting an analysis pipeline, web server, or ther such utility onto the cloud. With that in mind, I'll dispense with the spiel about why cloud computing is useful and yadda yadda yadda. This guide covers AWS and is intended to make the transition to the cloud as painless as possible even if you know very little linux. If you're a bioinformaticien, you might also check out [jetsream-cloud](https://jetstream-cloud.org/) (stay tuned for a tutorial on that one).
@@ -29,25 +26,25 @@ Amazon offers a variety of [virtual machine configurations](https://aws.amazon.c
 For the sake of this tutorial we will walkthrough the spin up of a t2.micro instance (free tier eligible).
 
 Once you log in to Amazon ec2, click 'Launch a virtual machine':  
-![getting_started_1](img/getting_started_1.png)
+![getting_started_1](https://github.com/ScientistJake/getting_started_with_AWS/blob/master/img/getting_started_1.png?raw=true)
 
 On the next page, you will be prompted to select an Image, which is essentially a collection of software that comes pre-installed on the instance. You can make and save your own image FYI for routine work, and there many community images that include all the useful stuff like anaconda, python, R, etc. For this tutorial we will just start a basic ubuntu image:   
-![getting_started_2](img/getting_started_2.png)
+![getting_started_2](https://github.com/ScientistJake/getting_started_with_AWS/blob/master/img/getting_started_2.png?raw=true)
 
 On the next step, choose the instance type. [Check this](https://aws.amazon.com/ec2/instance-types/) for a description of your options.  
-![getting_started_3](img/getting_started_3.png)
+![getting_started_3](https://github.com/ScientistJake/getting_started_with_AWS/blob/master/img/getting_started_3.png?raw=true)
 
 On this step you can add additional storage. [Check this](https://aws.amazon.com/ebs/volume-types/) for storage options.  
-![getting_started_4](img/getting_started_4.png)
+![getting_started_4](https://github.com/ScientistJake/getting_started_with_AWS/blob/master/img/getting_started_4.png?raw=true)
 
 Click through to the security step. This one is important. Here you're going to want to white list your local computer's IP address so that you can log onto the instance. Note that if you have a dynamically assigned address, or if you are constantly logging in from different networks, you will have to update this white-listed IP each time your address changes. If you have a static IP (like for your work computer that lives at work) then you're good to go.  
-![getting_started_5](img/getting_started_5.png)
+![getting_started_5](https://github.com/ScientistJake/getting_started_with_AWS/blob/master/img/getting_started_5.png?raw=true)
 
 The last step is to create a secure keyfile which has the extension `.pem`. This file is used for authentication when you sign in via ssh (more on that below). You can choose an existing key or create a new one. Here, we're creating a file called `UNCW_DS_AWSDEMO.pem`. Click download and don't forget about it.  
-![getting_started_6](img/getting_started_6.png)
+![getting_started_6](https://github.com/ScientistJake/getting_started_with_AWS/blob/master/img/getting_started_6.png?raw=true)
 
 Click launch instance and you're all set. On the ec2 console you should see it. Wait until the instance state says 'running', note the IP address and sign in (next section):  
-![getting_started_7](img/getting_started_7.png)
+![getting_started_7](https://github.com/ScientistJake/getting_started_with_AWS/blob/master/img/getting_started_7.png?raw=true)
 
 ## Accessing an instance via ssh  
 
@@ -142,6 +139,10 @@ If there is a problem with your key authentication, you can try to explicitely i
 ssh -i /path/my-key-pair.pem ubuntu@my-instance-public-dns-name
 ```  
 
+### Accessing your instance from a windows machine:  
+Use [Putty](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
+Maybe someone with a PC can write this section.
+
 ## Playing around with your instance:  
 For the section we will assume very little knowledge of Linux operating systems. First let's just explore our environment. Your login directory is the home directory for the user you logged in as:  
 ```
@@ -170,7 +171,7 @@ tmpfs            98M     0   98M   0% /run/user/1000
 ```
 
 If the instance includes `htop` you can also use that to check out the instance.  
-![htop](img/htop.png)
+![htop](https://github.com/ScientistJake/getting_started_with_AWS/blob/master/img/htop.png?raw=true)
 
 I won't go through the details of a linux file system but at this point you would create a working directory and start computing:
 ```
@@ -215,13 +216,13 @@ Note: For really big transfers, use [rsync](https://linux.die.net/man/1/rsync) s
 
 ## Monitoring the instance:  
 You can monitor the instance usage directly from the ec2 console under the "Monitoring" tab:  
-![monitor](img/monitor.png)
+![monitor](https://github.com/ScientistJake/getting_started_with_AWS/blob/master/img/monitor.png?raw=true
 
 From the instance itself you can monitor with htop if it's installed:
 ```
 htop
 ```  
-![htop](img/htop.png)
+![htop](https://github.com/ScientistJake/getting_started_with_AWS/blob/master/img/htop.png?raw=true)
 
 Another good way is to use the [mail utility](https://www.binarytides.com/linux-mailx-command/) to send you an alert when your job is finished, or to periodically forward you a log file. This needs installing and a quick setup. Once installed you can for example add this to the end of a script and it will send you a 'job complete' notification so you can shut down your instance:
 ```
@@ -232,7 +233,7 @@ echo "Job is complete" | mail -s "Notification from ec2 instance" drJake@example
 ## Shutting down an instance and cleaning up:
 
 Shutting down your instance is super simple. Just transfer all your data off and shut it down from the console. You can stop the isntance or terminate. When you stop the instance it will shut it down and 'freeze' it. You won't be charged for computation time, because no computations are running, and you can resume it at anytime to get back all your data or programs you've installed. Note that restarting an instance will change its IP address. Terminating an instance on the otherhand removes it completely. The difference is that terminating an instance will also delete any attached bootable EBS volumes, ceasing any charges associated with those. If you don't know what these volumes are you can [read more here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html).   
-![shutdown](img/shutdown.png)
+![shutdown](https://github.com/ScientistJake/getting_started_with_AWS/blob/master/img/shutdown.png?raw=true)
 
 ## Learn more:
 
