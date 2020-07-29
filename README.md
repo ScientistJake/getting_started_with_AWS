@@ -1,6 +1,5 @@
 # Intro to cloud computing using AWS 
 By Jake Warner  
-UNCW center for bioinformatics
 
 ## Contents: 
 * [Introduction](https://github.com/ScientistJake/getting_started_with_AWS#introduction)  
