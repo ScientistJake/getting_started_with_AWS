@@ -216,7 +216,7 @@ Note: For really big transfers, use [rsync](https://linux.die.net/man/1/rsync) s
 
 ## Monitoring the instance:  
 You can monitor the instance usage directly from the ec2 console under the "Monitoring" tab:  
-![monitor](https://github.com/ScientistJake/getting_started_with_AWS/blob/master/img/monitor.png?raw=true
+![monitor](https://github.com/ScientistJake/getting_started_with_AWS/blob/master/img/monitor.png?raw=true)
 
 From the instance itself you can monitor with htop if it's installed:
 ```
