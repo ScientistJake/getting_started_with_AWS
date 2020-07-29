@@ -8,7 +8,7 @@ UNCW DataScience
 * [Getting started](https://github.com/ScientistJake/getting_started_with_AWS#getting-started)  
 * [Accessing an instance via ssh](https://github.com/ScientistJake/getting_started_with_AWS#accessing-an-instance-via-ssh) 
      - [From Mac OSX / Linux](https://github.com/ScientistJake/getting_started_with_AWS#accessing-an-instance-via-ssh-from-a-mac-linux) 
-     - [From Windows](https://github.com/ScientistJake/getting_started_with_AWS#accessing-your-instance-from-windows-machine) 
+     - [From Windows](https://github.com/ScientistJake/getting_started_with_AWS#accessing-your-instance-from-a-windows-machine) 
 * [Playing around with your instance](https://github.com/ScientistJake/getting_started_with_AWS#playing-around-with-your-instance) 
 * [Moving files on and off via scp](https://github.com/ScientistJake/getting_started_with_AWS#moving-files-on-and-off-via-scp) 
 * [Monitoring the instance](https://github.com/ScientistJake/getting_started_with_AWS#monitoring-the-instance) 
